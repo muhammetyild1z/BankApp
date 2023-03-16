@@ -1,0 +1,11 @@
+﻿namespace My.BankApp.Web.Data.Entities
+{
+    public class Account
+    {
+        public int Id { get; set; }
+        public decimal Bakance { get; set; }
+        public int AccountNumber { get; set; }
+        public int ApplicationUserId { get; set; }
+        public ApplicationUser ApplicationUser { get; set; }
+    }
+}

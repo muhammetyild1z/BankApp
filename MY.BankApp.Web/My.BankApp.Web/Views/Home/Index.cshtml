@@ -1,0 +1,31 @@
+﻿@model List<UserListModel>
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered table-hover alert-dark">
+    <thead class="thead-dark">
+        <tr>
+        <th>Id</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Hesap Sayisi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td >@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.SurName</td>
+               
+                <td class="badge bg-danger ml-3"><getAccountCount application-user-id="@item.Id"></getAccountCount></td>
+                <td><a class="btn btn-outline-primary" asp-action="Create" asp-controller="Account" asp-route-id="@item.Id">Yeni Hesap Olustur</a></td>
+            </tr>
+        }
+       
+    </tbody>
+</table>
+
